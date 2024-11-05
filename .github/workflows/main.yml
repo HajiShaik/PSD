@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'  # Change this if needed
+          python-version: '3.x'  # Change this if needed
 
       - name: Install dependencies
         run: |
@@ -28,17 +28,6 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest testcases  # Adjust the path if your tests are located elsewhere
+          pytest test_scientific_calculator.py # Adjust the path if your tests are located elsewhere
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build  # This job runs only after the build job is successful
-    if: github.ref == 'refs/heads/main'  # Only deploy on pushes to main
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Deploy to server
-        run: |
-          echo "Deploying to server..."  # Replace this with your deployment commands
+  
