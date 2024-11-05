@@ -1,0 +1,5 @@
+# Required packages for scientific calculator
+numpy               # For numerical operations
+scipy               # For advanced scientific computations
+pytest              # For running tests
+matplotlib          # For plotting (if needed for visualization)
